@@ -9,7 +9,7 @@ export const RegisterForm = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (loadState("token")) {
       navigate("/main", { replace: true });
     }

@@ -11,7 +11,7 @@ export const RegisterForm = () => {
 
   React.useEffect(() => {
     if (loadState("token")) {
-      navigate("/main");
+      navigate("/main", { replace: true });
     }
   }, []);
 
@@ -34,7 +34,7 @@ export const RegisterForm = () => {
           content: "ok",
         });
         saveState("token", res.token);
-        navigate("/main");
+        navigate("/main", { replace: true });
       },
     });
   };

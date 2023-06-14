@@ -11,7 +11,7 @@ export const RegisterForm = () => {
 
   React.useEffect(() => {
     if (loadState("token")) {
-      navigate("/main");
+      navigate("/main", { replace: true });
     }
   }, []);
 

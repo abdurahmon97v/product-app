@@ -1,18 +1,15 @@
 import React from "react";
 import { Layout, Menu, theme } from "antd";
-import { loadState } from "../utils/storage";
 import { items } from "./menu-data";
-import { Link, Navigate, Outlet } from "react-router-dom";
+import WithAuth from "../components/protect-route/withauth";
+import { Link, Outlet } from "react-router-dom";
 
-export const MainLayout = () => {
+const MainLayout = () => {
   const { Header, Content, Footer, Sider } = Layout;
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  console.log(loadState("token"));
-  if (!loadState("token")) {
-    return <Navigate to="/" />;
-  }
+
   return (
     <Layout>
       <Sider
@@ -64,3 +61,5 @@ export const MainLayout = () => {
     </Layout>
   );
 };
+
+export default WithAuth(MainLayout);

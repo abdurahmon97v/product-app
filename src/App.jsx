@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "./pages/auth/login";
 import { Home } from "./pages/home";
 import { Search } from "./pages/search";
-import { MainLayout } from "./layout";
+import MainLayout from "./layout/main-layout";
 
 function App() {
   return (

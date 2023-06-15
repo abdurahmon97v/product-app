@@ -11,7 +11,7 @@ export const RegisterForm = () => {
   const navigate = useNavigate();
 
   if (loadState("token")) {
-    <Navigate to="/main" replace={true} />;
+    return <Navigate to="/main" replace={true} />;
   }
 
   const submit = (data) => {

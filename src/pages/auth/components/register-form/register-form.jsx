@@ -11,7 +11,9 @@ export const RegisterForm = () => {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    navigate("/main");
+    if (loadState("token")) {
+      navigate("/main");
+    }
   }, []);
 
   const submit = (data) => {

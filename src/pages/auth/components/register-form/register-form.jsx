@@ -33,7 +33,7 @@ export const RegisterForm = () => {
           content: "ok",
         });
         saveState("token", res.token);
-        navigate("/main");
+        navigate("/main", { replace: true });
       },
     });
   };

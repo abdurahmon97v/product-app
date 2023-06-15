@@ -9,8 +9,9 @@ export const MainLayout = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+  console.log(loadState("token"));
   if (!loadState("token")) {
-    return <Navigate to="/" replace={true} />;
+    return <Navigate to="/" />;
   }
   return (
     <Layout>

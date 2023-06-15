@@ -3,17 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { saveState, loadState } from "../../../../utils/storage";
 import { useLogin } from "../../../../service/mutation/use-login";
 import { Button, Form, Input, message } from "antd";
+import { Navigate } from "react-router-dom";
 
 export const RegisterForm = () => {
   const { isLoading, mutate } = useLogin();
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
 
-  React.useEffect(() => {
-    if (loadState("token")) {
-      navigate("/main", { replace: true });
-    }
-  }, []);
+  if (loadState("token")) {
+    <Navigate to="/main" replace={true} />;
+  }
 
   const submit = (data) => {
     const formData = new URLSearchParams();

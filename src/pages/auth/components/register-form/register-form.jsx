@@ -10,9 +10,9 @@ export const RegisterForm = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
 
-  if (loadState("token")) {
-    return <Navigate to="/main" replace={true} />;
-  }
+  React.useEffect(() => {
+    navigate("/main");
+  }, []);
 
   const submit = (data) => {
     const formData = new URLSearchParams();
@@ -33,7 +33,7 @@ export const RegisterForm = () => {
           content: "ok",
         });
         saveState("token", res.token);
-        navigate("/main", { replace: true });
+        navigate("/main");
       },
     });
   };

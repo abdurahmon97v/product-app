@@ -9,12 +9,9 @@ export const MainLayout = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  React.useEffect(() => {
-    if (!loadState("token")) {
-      return <Navigate to="/" replace={true} />;
-    }
-    console.log(loadState("token"));
-  }, []);
+  if (!loadState("token")) {
+    return <Navigate to="/" replace={true} />;
+  }
   return (
     <Layout>
       <Sider

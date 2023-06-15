@@ -13,6 +13,7 @@ export const MainLayout = () => {
     if (!loadState("token")) {
       return <Navigate to="/" replace={true} />;
     }
+    console.log(loadState("token"));
   }, []);
   return (
     <Layout>
